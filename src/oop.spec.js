@@ -58,20 +58,34 @@ describe('ООП', () => {
     describe('#Queue', () => {
         it('проверка массивом', () => {
             const queue = new core.Queue();
-            // TODO:
-            assert.strictEqual(true, true);
+            // TODO: что делать - то?
+            assert.strictEqual(queue.push(1), undefined);
+            assert.strictEqual(queue.push(2), undefined);
+            assert.strictEqual(queue.push(3), undefined);
+            assert.strictEqual(queue.push(4), undefined);
+            assert.strictEqual(queue.pop(), 1);
+            assert.strictEqual(queue.pop(), 2);
+            assert.strictEqual(queue.pop(), 3);
+            assert.strictEqual(queue.pop(), 4);
+            assert.strictEqual(queue.pop(), undefined);
         });
 
         it('проверка на пограничные случаи', () => {
             const queue = new core.Queue();
             // TODO:
-            assert.strictEqual(true, true);
+            assert.strictEqual(queue.pop(), undefined);
+            assert.strictEqual(queue.pop(), undefined);
+            assert.strictEqual(queue.push(1), undefined);
+            assert.strictEqual(queue.pop(), 1);
         });
 
         it('может создаться из массива', () => {
             const queue = new core.Queue([1,2,3,5]);
             // TODO:
-            assert.strictEqual(true, true);
+            assert.strictEqual(queue.pop(), 1);
+            assert.strictEqual(queue.pop(), 2);
+            assert.strictEqual(queue.pop(), 3);
+            assert.strictEqual(queue.pop(), 5);
         });
     });
 });
