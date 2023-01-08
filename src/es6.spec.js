@@ -43,5 +43,16 @@ describe('es6', () => {
             // TODO
             assert.strictEqual(!!dic, true);
         });
+        it('Добавление, удаление, получение, нахождение', () => {
+            const dic = new core.Dictionary();
+
+            // TODO
+            assert.strictEqual(dic.set("Makaka", "S krasnoy"), true);
+            assert.strictEqual(dic.set("Makakas", "S krasnoys"), true);
+            assert.strictEqual(dic.remove("Makakas"), true);
+            assert.strictEqual(dic.remove("Makakas"), false);
+            assert.strictEqual(dic.get("Makaka"), "S krasnoy");
+            assert.strictEqual(dic.get("Makakas"), false);
+        });
     });
 });
