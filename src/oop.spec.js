@@ -80,7 +80,7 @@ describe('ООП', () => {
         });
 
         it('может создаться из массива', () => {
-            const queue = new core.Queue([1,2,3,5]);
+            const queue = new core.Queue([[0, 1], [1, 2], [2, 3], [3, 5]]);
             // TODO:
             assert.strictEqual(queue.pop(), 1);
             assert.strictEqual(queue.pop(), 2);

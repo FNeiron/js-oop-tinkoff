@@ -38,12 +38,7 @@ class Point3D extends Point {
  */
 class Queue {
     constructor(initArr = []) {
-        this.map = new Map();
-        if(initArr.length > 0){
-            for(let i = 0; i < initArr.length; ++i){
-                this.map.set(i, initArr[i]);
-            }
-        }
+        this.map = new Map(initArr);
     }
 
     push(value){
