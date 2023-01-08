@@ -38,28 +38,26 @@ class Point3D extends Point {
  */
 class Queue {
     constructor(initArr = []) {
-        this.array = [];
-        this.size = initArr.length;
-        if(this.size){
-            for(let i = 0; i < this.size; ++i){
-                this.array[i] = initArr[i];
+        this.map = new Map();
+        if(initArr.length > 0){
+            for(let i = 0; i < initArr.length; ++i){
+                this.map.set(i, initArr[i]);
             }
         }
     }
 
     push(value){
-        this.array[this.size] = value;
-        this.size += 1;
+        this.map.set(this.map.size, value);
     }
 
     pop(){
-        if(this.size > 0) {
-            let tmp = this.array[0]
-            this.array = this.array.slice(1, this.size)
-            this.size -= 1;
+        if(this.map.size > 0) {
+            const ind = this.map.keys().next().value;
+            const tmp = this.map.get(ind);
+            this.map.delete(ind);
             return tmp;
         }
-        else return undefined;
+        return undefined;
     }
 }
 

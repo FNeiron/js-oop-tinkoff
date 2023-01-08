@@ -6,7 +6,7 @@
 // Напишите функцию, которая принимает ФИО пользователя и возвращает
 // строку формата Имя Фамилия
 function fioToName(fio) {
-    let [lastName, firstName] = fio.split(' ');
+    const [lastName, firstName] = fio.split(' ');
     return `${firstName} ${lastName}`;
 }
 
@@ -14,7 +14,7 @@ function fioToName(fio) {
 // уникальные элементы
 // присмотритесь к коллекции "Set"
 function filterUnique(array) {
-    let set = new Set(array);
+    const set = new Set(array);
     return Array.from(set);
 }
 
@@ -25,11 +25,11 @@ function filterUnique(array) {
 // присмотритесь к методу .reduce
 function calculateSalaryDifference(array) {
     if (!array.length) return false;
-    let min = array.reduce(function (accumulator, currentValue) {
+    const min = array.reduce(function (accumulator, currentValue) {
         if (accumulator > currentValue) accumulator = currentValue;
         return accumulator;
     });
-    let max = array.reduce(function (accumulator, currentValue) {
+    const max = array.reduce(function (accumulator, currentValue) {
         if (accumulator < currentValue) accumulator = currentValue;
         return accumulator;
     });
@@ -61,13 +61,10 @@ class Dictionary {
         return true
     }
     remove(word){
-        if(typeof word === 'string')
-            if(this.map.has(word)) {
+        if(typeof word === 'string' && this.map.has(word)) {
                 this.map.delete(word)
                 return true
             }
-            else
-                return false
         else
             return false
     }
